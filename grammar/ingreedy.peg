@@ -86,8 +86,9 @@ fluid
   / 'fl'i '.'?
 
 
-pfund
+Pfund
   = 'pfunde'i
+  / 'pfund'i
   / 'pfd.'i
   / 'pf.'i
   / 'pfd'i
