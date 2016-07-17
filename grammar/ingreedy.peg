@@ -28,7 +28,7 @@ amount
   / integer
 
 addition
-  = Stangen
+  = phrase
   / 'stangen'i
   / 'stange'i
   / 'dose'i
@@ -83,8 +83,8 @@ unit
 german_unit
   = Tasse
   / Pfund
-  / L&ouml;ffel
-  / Teel&ouml;ffel
+  / loeffel
+  / teeloeffel
 
 Tasse
   = 'Tassen'i
@@ -101,13 +101,13 @@ Pfund
   / 'pf'i
 
 
-L&ouml;ffel
+loeffel
   = 'l&ouml;ffel'i
   / 'lfl'i
   / 'lfl.'i
   / 'l.'i
 
-Teel&ouml;ffel
+teeloeffel
   = 'teel&ouml;ffel'i
   / 'tl'i '.'?
 
@@ -153,7 +153,7 @@ imprecise_unit
   = gestrichen
   / handvoll
   / prise
-  / rühren
+  / ruehren
 
 gestrichen
   = 'gestrichen'i
@@ -170,6 +170,6 @@ prise
   = 'prise'i
   / 'prisen'i
 
-r&uuml;hren
+ruehren
   = 'r&uuml;hren'i
   / 'ger&uuml;hrt'i

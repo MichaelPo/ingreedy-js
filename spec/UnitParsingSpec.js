@@ -66,9 +66,9 @@ describe("Unit parsing", function() {
       expect(parser).toParseUnit('2 c flour');
     });
 
-    it('parses teelöffel', function() {
+    it('parses teeloeffel', function() {
       expect(parser).toParseUnit('3 TL.');
-      expect(parser).toParseUnit('1 Teelöffel');
+      expect(parser).toParseUnit('1 Teel&ouml;ffel');
       expect(parser).toParseUnit('2 TL');
     });
 
