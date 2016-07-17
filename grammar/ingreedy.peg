@@ -1,8 +1,6 @@
 start
   = ingredient_addition
 
-ingredient_additions
-  = ingredient_addition+
 
 ingredient_addition
   = amount:amount (ws+)?  addition:addition? (ws+)? unit:unit? (ws+)? ingredient:ingredient?  container:container?  [\n]?  {
@@ -36,8 +34,8 @@ addition
   / 'dose'i
   / 'bund'i
   / 'gestrichener'i
-  / 'körniger'i
-  / 'körnigen'i
+  / 'k&ouml;rniger'i
+  / 'k&ouml;rnigen'i
 
 
 
@@ -85,18 +83,13 @@ unit
 german_unit
   = Tasse
   / Pfund
-  / Löffel
-  / Teelöffel
+  / L&ouml;ffel
+  / Teel&ouml;ffel
 
 Tasse
   = 'Tassen'i
   / 'Tas.'i
   / 'T.'i
-
-
-fluid
-  = 'fluid'i
-  / 'fl'i '.'?
 
 
 Pfund
@@ -108,14 +101,14 @@ Pfund
   / 'pf'i
 
 
-Löffel
-  = 'löffel'i
+L&ouml;ffel
+  = 'l&ouml;ffel'i
   / 'lfl'i
   / 'lfl.'i
   / 'l.'i
 
-Teelöffel
-  = 'teelöffel'i
+Teel&ouml;ffel
+  = 'teel&ouml;ffel'i
   / 'tl'i '.'?
 
 metric_unit
@@ -158,8 +151,25 @@ milliliter
 
 imprecise_unit
   = gestrichen
+  / handvoll
+  / prise
+  / rühren
 
 gestrichen
   = 'gestrichen'i
   / 'gestrichene'i
   / 'gestrichener'i
+
+handvoll
+  = 'handvoll'i
+  / 'handvolle'i
+  / 'handvol'i
+
+
+prise
+  = 'prise'i
+  / 'prisen'i
+
+r&uuml;hren
+  = 'r&uuml;hren'i
+  / 'ger&uuml;hrt'i
