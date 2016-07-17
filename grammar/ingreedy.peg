@@ -5,10 +5,9 @@ ingredient_additions
   = ingredient_addition+
 
 ingredient_addition
-  = amount:amount (ws+)?  addition:addition (ws+)? unit:unit? (ws+)? ingredient:ingredient?  container:container?  [\n]?  {
+  = amount:amount (ws+)?  addition:addition? (ws+)? unit:unit? (ws+)? ingredient:ingredient?  container:container?  [\n]?  {
     var result = {
       amount: amount,
-      addition: addition,
       container: container,
       ingredient: ingredient,
       unit: unit
@@ -31,11 +30,13 @@ amount
 
 addition
   = Stangen
-  / stangen'i
-  / stange'i
-  / dose'i
-  / bund'i
-  / gestrichener'i
+  / 'stangen'i
+  / 'stange'i
+  / 'dose'i
+  / 'bund'i
+  / 'gestrichener'i
+  / 'körniger'i
+  / 'körnigen'i
 
 
 
@@ -111,13 +112,10 @@ Löffel
   / 'lfl'i
   / 'lfl.'i
   / 'l.'i
-  'el'i
 
 Teelöffel
   = 'teelöffel'i
-  / 'teelfl.'i
-  / 'teelfl'i
-  / 'tl'i
+  / 'tl'i '.'?
 
 metric_unit
   = gramm
@@ -128,11 +126,11 @@ metric_unit
 
 gramm
   = 'gramm'i
-  / gramm : 'gram'i
-  / gramm : 'gr.'i
-  / gramm : 'gr'i
-  / gramm : 'g.'i 
-  / gramm : 'g'i
+  / 'gram'i
+  / 'gr.'i
+  / 'gr'i
+  / 'g.'i 
+  / 'g'i
 
 kilogramm
   = 'kilogramm'i

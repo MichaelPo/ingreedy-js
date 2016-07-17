@@ -66,18 +66,10 @@ describe("Unit parsing", function() {
       expect(parser).toParseUnit('2 c flour');
     });
 
-    it('parses fluid ounces', function() {
-      expect(parser).toParseUnit('2 fluid ounces water');
-      expect(parser).toParseUnit('1 fluid ounce water');
-      expect(parser).toParseUnit('1 fluid oz. water');
-      expect(parser).toParseUnit('1 fluid oz water');
-      expect(parser).toParseUnit('1 fl. oz. water');
-      expect(parser).toParseUnit('1 fl oz water');
-      expect(parser).toParseUnit('1 fl oz. water');
-      expect(parser).toParseUnit('1 fl. oz water');
-      expect(parser).toParseUnit('1 fl ounces water');
-      expect(parser).toParseUnit('1 fl ounce water');
-      expect(parser).toParseUnit('1 fl. ounce water');
+    it('parses teelöffel', function() {
+      expect(parser).toParseUnit('3 TL.');
+      expect(parser).toParseUnit('1 Teelöffel');
+      expect(parser).toParseUnit('2 TL');
     });
 
     it('parses gallons', function() {
