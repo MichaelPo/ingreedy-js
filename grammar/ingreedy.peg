@@ -5,7 +5,7 @@ ingredient_additions
   = ingredient_addition+
 
 ingredient_addition
-  = amount:amount (ws+)?  addition:addition? (ws+)? unit:unit? (ws+)? ingredient:ingredient?  container:container?  [\n]?  {
+  = amount:amount (ws+)? unit:unit? (ws+)? ingredient:ingredient?  container:container?  [\n]?  {
     var result = {
       amount: amount,
       container: container,
