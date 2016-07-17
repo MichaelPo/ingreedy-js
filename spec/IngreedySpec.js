@@ -45,6 +45,25 @@ describe("Ingreedy", function() {
             });
         });
     });
+    describe('simple ingredient additions', function() {
+        it('parses the correct values', function() {
+            expect('80 g Heidelbeere').toBeParsedAs({
+                amount: '80',
+                unit: 'g',
+                ingredient: 'Heidelbeere'
+            });
+        });
+    });
+
+    describe('simple ingredient additions', function() {
+        it('parses the correct values', function() {
+            expect('300 g gegarte rote Bete').toBeParsedAs({
+                amount: '300',
+                unit: 'g',
+                ingredient: 'gegarte rote Bete'
+            });
+        });
+    });
 
     describe('simple ingredient additions', function() {
         it('parses the correct values', function() {

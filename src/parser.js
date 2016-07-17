@@ -376,9 +376,6 @@ Ingreedy = (function() {
         }
         if (s2 !== peg$FAILED) {
           s3 = peg$parseaddition();
-          if (s3 === peg$FAILED) {
-            s3 = peg$c1;
-          }
           if (s3 !== peg$FAILED) {
             s4 = [];
             s5 = peg$parsews();
