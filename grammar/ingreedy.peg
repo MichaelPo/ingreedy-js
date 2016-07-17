@@ -5,9 +5,10 @@ ingredient_additions
   = ingredient_addition+
 
 ingredient_addition
-  = amount:amount (ws+)? unit:unit? (ws+)? ingredient:ingredient?  container:container?  [\n]?  {
+  = amount:amount (ws+)?  addition:addition? (ws+)? unit:unit? (ws+)? ingredient:ingredient?  container:container?  [\n]?  {
     var result = {
       amount: amount,
+      addition: addition,
       container: container,
       ingredient: ingredient,
       unit: unit
@@ -157,25 +158,8 @@ milliliter
 
 imprecise_unit
   = gestrichen
-  / handvoll
-  / prise
-  / rühren
 
 gestrichen
   = 'gestrichen'i
   / 'gestrichene'i
   / 'gestrichener'i
-
-handvoll
-  = 'handvoll'i
-  / 'handvolle'i
-  / 'handvol'i
-
-
-prise
-  = 'prise'i
-  / 'prisen'i
-
-rühren
-  = 'rühren'i
-  / 'gerührt'i
