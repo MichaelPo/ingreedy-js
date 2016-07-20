@@ -110,6 +110,7 @@ loeffel
 teeloeffel
   = 'teel&ouml;ffel'i
   / 'tl'i '.'?
+  / 'TL'i
 
 metric_unit
   = gramm

@@ -67,9 +67,10 @@ describe("Unit parsing", function() {
     });
 
     it('parses teeloeffel', function() {
-      expect(parser).toParseUnit('3 TL.');
-      expect(parser).toParseUnit('1 Teel&ouml;ffel');
-      expect(parser).toParseUnit('2 TL');
+      expect(parser).toParseUnit('3 teeloeffel Zucker');
+      expect(parser).toParseUnit('3 TL. Zucker');
+      expect(parser).toParseUnit('1 Teel&ouml;ffel Zucker');
+      expect(parser).toParseUnit('2 TL Zucker');
     });
 
     it('parses gallons', function() {
