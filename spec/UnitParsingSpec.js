@@ -141,8 +141,8 @@ describe("Unit parsing", function() {
       expect(parser).toParseUnit('1 g water');
     });
 
-    it('parses kilograms', function() {
-      expect(parser).toParseUnit('2 kilograms water');
+    it('parses kilogramm', function() {
+      expect(parser).toParseUnit('2 kilogramm water');
       expect(parser).toParseUnit('1 kilogram water');
       expect(parser).toParseUnit('1 kg. water');
       expect(parser).toParseUnit('1 kg water');
