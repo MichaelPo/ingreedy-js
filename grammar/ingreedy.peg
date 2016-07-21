@@ -70,20 +70,16 @@ unit
 
 german_unit
   = Tasse
-  / Pfund
   / loeffel
   / teeloeffel
 
 Tasse
-  = 'Tassen'i
+  = 'Tasse'i
+  / 'Tassen'i
   / 'Tas.'i
   / 'T'i '.'?
 
 
-Pfund
-  = 'pfund'i
-  / 'pfd'i '.'?
-  / 'pf'i '.'?
 
 
 loeffel
@@ -101,6 +97,7 @@ metric_unit
   = gramm
   / kilogramm
   / liter
+  / Pfund
 
 gramm
   = 'gramm'i
@@ -118,6 +115,10 @@ liter
   / 'l'i '.'?
   / 'ltr'i '.'?
 
+Pfund
+  = 'pfund'i
+  / 'pfd'i '.'?
+  / 'pf'i '.'?
 
 imprecise_unit
   = gestrichen
@@ -126,7 +127,6 @@ imprecise_unit
   / stangen
   / dose
   / bund
-  / gestrichener
   / koerniger
 
 gestrichen
@@ -138,7 +138,6 @@ handvoll
   = 'handvoll'i
   / 'handvolle'i
   / 'handvol'i
-
 
 prise
   = 'prise'i
@@ -154,10 +153,6 @@ stangen
 
  bund
  = 'bund'i 
-
- gestrichener
- = 'gestrichener'i 
- / 'gestrichene'i 
  
  koerniger
  = 'koerniger'i

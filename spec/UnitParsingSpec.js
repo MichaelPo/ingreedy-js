@@ -81,8 +81,9 @@ describe("Unit parsing", function() {
             expect(parser).toParseUnit('1 Teelöffel Zucker');
             expect(parser).toParseUnit('2 TL Zucker');
         });
+    });
 
-
+    describe('metric units', function() {
         it('parses gramm', function() {
             expect(parser).toParseUnit('20 gramm Zucker');
             expect(parser).toParseUnit('10 g zucker');
@@ -108,76 +109,33 @@ describe("Unit parsing", function() {
             expect(parser).toParseUnit('3 Ltr Wasser');
         });
 
-        it('parses gestrichen', function() {
-            expect(parser).toParseUnit('2 gestrichene Löffel Zucker');
-            expect(parser).toParseUnit('1 teaspoon water');
-            expect(parser).toParseUnit('1 tsp. water');
-            expect(parser).toParseUnit('1 tsp water');
-            expect(parser).toParseUnit('1 t. water');
-            expect(parser).toParseUnit('1 t water');
-        });
-    });
 
-    describe('metric units', function() {
-        it('parses grams', function() {
-            expect(parser).toParseUnit('2 grams water');
-            expect(parser).toParseUnit('1 gram water');
-            expect(parser).toParseUnit('1 gr. water');
-            expect(parser).toParseUnit('1 gr water');
-            expect(parser).toParseUnit('1 g. water');
-            expect(parser).toParseUnit('1 g water');
-        });
-
-        it('parses kilogramm', function() {
-            expect(parser).toParseUnit('2 kilogramm water');
-            expect(parser).toParseUnit('1 kilogram water');
-            expect(parser).toParseUnit('1 kg. water');
-            expect(parser).toParseUnit('1 kg water');
-        });
-
-        it('parses liters', function() {
-            expect(parser).toParseUnit('2 liters water');
-            expect(parser).toParseUnit('1 liter water');
-            expect(parser).toParseUnit('1 L. water');
-            expect(parser).toParseUnit('1 l. water');
-            expect(parser).toParseUnit('1 L water');
-            expect(parser).toParseUnit('1 l water');
-        });
-
-        it('parses milligrams', function() {
-            expect(parser).toParseUnit('2 milligrams water');
-            expect(parser).toParseUnit('1 milligram water');
-            expect(parser).toParseUnit('1 mg. water');
-            expect(parser).toParseUnit('1 mg water');
-        });
-
-        it('parses milliliters', function() {
-            expect(parser).toParseUnit('2 milliliters water');
-            expect(parser).toParseUnit('1 milliliter water');
-            expect(parser).toParseUnit('1 ml. water');
-            expect(parser).toParseUnit('1 ml water');
-        });
     });
 
     describe('imprecise units', function() {
-        it('parses dashes', function() {
-            expect(parser).toParseUnit('2 dashes salt');
-            expect(parser).toParseUnit('1 dash salt');
+        it('parses gestrichen', function() {
+            expect(parser).toParseUnit('2 gestrichener Löffel Zucker');
+            expect(parser).toParseUnit('1 gestrichene Löffel Salz');
         });
 
-        it('parses handfuls', function() {
-            expect(parser).toParseUnit('2 handfuls salt');
-            expect(parser).toParseUnit('1 handful salt');
+        it('parses handvoll', function() {
+            expect(parser).toParseUnit('1 handvoll Äpfel');
+            expect(parser).toParseUnit('2 handvolle Äpfel');
         });
 
-        it('parses pinches', function() {
-            expect(parser).toParseUnit('2 pinches salt');
-            expect(parser).toParseUnit('1 pinch salt');
+        it('parses prise', function() {
+            expect(parser).toParseUnit('1 Prise Zucker');
+            expect(parser).toParseUnit('2 Prisen Salz');
         });
 
-        it('parses touches', function() {
-            expect(parser).toParseUnit('2 touches salt');
-            expect(parser).toParseUnit('1 touch salt');
+        it('parses stangen', function() {
+            expect(parser).toParseUnit('2 stangen Lauch');
+            expect(parser).toParseUnit('1 Stange Lauch');
+        });
+
+        it('parses koerniger', function() {
+            expect(parser).toParseUnit('1 körniger xyz');
+            expect(parser).toParseUnit('2 körnige xyz');
         });
     });
 });
