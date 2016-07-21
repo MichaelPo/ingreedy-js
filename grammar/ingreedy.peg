@@ -1,15 +1,13 @@
 start
   = ingredient_addition
 
-
 ingredient_addition
-  = amount:amount? (ws+)? addition:addition? (ws+)? unit:unit? (ws+)? ingredient:ingredient? container:container?  [\n]?  {
+  = amount:amount (ws+)? container:container? unit:unit? (ws+)? ingredient:ingredient? [\n]?  {
     var result = {
       amount: amount,
-      addition: addition,
       container: container,
-      ingredient: ingredient,
-      unit: unit
+      unit: unit,
+      ingredient: ingredient
     };
 
     for(var i in result) {
@@ -21,22 +19,12 @@ ingredient_addition
     return result;
   }
 
+
 amount
   = float
   / mixed_number
   / fraction
   / integer
-
-addition
-  = phrase
-  / 'stangen'i
-  / 'stange'i
-  / 'dose'i
-  / 'bund'i
-  / 'gestrichener'i
-  / 'k&ouml;rniger'i
-  / 'k&ouml;rnigen'i
-
 
 
 container
@@ -89,72 +77,57 @@ german_unit
 Tasse
   = 'Tassen'i
   / 'Tas.'i
-  / 'T.'i
+  / 'T'i '.'?
 
 
 Pfund
-  = 'pfunde'i
-  / 'pfund'i
-  / 'pfd.'i
-  / 'pf.'i
-  / 'pfd'i
-  / 'pf'i
+  = 'pfund'i
+  / 'pfd'i '.'?
+  / 'pf'i '.'?
 
 
 loeffel
-  = 'l&ouml;ffel'i
-  / 'lfl'i
-  / 'lfl.'i
-  / 'l.'i
+  = 'löffel'i
+  / 'EL'i
+  / 'lfl'i '.'?
+
 
 teeloeffel
   = 'teeloeffel'i
+  / 'teelöffel'i
   / 'tl'i '.'?
-  / 'TL'i
 
 metric_unit
   = gramm
   / kilogramm
   / liter
-  / milligramm
-  / milliliter
 
 gramm
   = 'gramm'i
   / 'gram'i
-  / 'gr.'i
-  / 'gr'i
-  / 'g.'i 
-  / 'g'i
+  / 'gr'i '.'?
+  / 'g'i '.'?
 
 kilogramm
   = 'kilogramm'i
   / 'kilogram'i
-  / 'kg.'i
-  / 'kg'i
+  / 'kg'i '.'?
 
 liter
   = 'liter'i
-  / 'l.'i
-  / 'l'i
+  / 'l'i '.'?
+  / 'ltr'i '.'?
 
-milligramm
-  = 'milligramm'i
-  / 'milligram'i
-  / 'mg.'i
-  / 'mg'i
-
-milliliter
-  = 'milliliters'i
-  / 'milliliter'i
-  / 'ml.'i
-  / 'ml'i
 
 imprecise_unit
   = gestrichen
   / handvoll
   / prise
-  / ruehren
+  / stangen
+  / dose
+  / bund
+  / gestrichener
+  / koerniger
 
 gestrichen
   = 'gestrichen'i
@@ -171,6 +144,23 @@ prise
   = 'prise'i
   / 'prisen'i
 
-ruehren
-  = 'r&uuml;hren'i
-  / 'ger&uuml;hrt'i
+stangen
+ = 'stangen'i
+ / 'stange'i
+ 
+ dose
+ = 'dose'i
+ / 'dosen'i
+
+ bund
+ = 'bund'i 
+
+ gestrichener
+ = 'gestrichener'i 
+ / 'gestrichene'i 
+ 
+ koerniger
+ = 'koerniger'i
+ / 'körnige'i
+ / 'körniger'i 
+ / 'körnige'i 

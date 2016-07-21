@@ -37,7 +37,7 @@ describe("Ingreedy", function() {
     });
 
     describe('simple ingredient additions', function() {
-        it('parses the correct values', function() {
+        it('parses the correct values for 1 EL Olivenöl', function() {
             expect('1 EL Olivenöl').toBeParsedAs({
                 amount: '1',
                 unit: 'EL',
@@ -46,7 +46,7 @@ describe("Ingreedy", function() {
         });
     });
     describe('simple ingredient additions', function() {
-        it('parses the correct values', function() {
+        it('parses the correct values for 80 g Heidelbeere', function() {
             expect('80 g Heidelbeere').toBeParsedAs({
                 amount: '80',
                 unit: 'g',
@@ -56,7 +56,7 @@ describe("Ingreedy", function() {
     });
 
     describe('simple ingredient additions', function() {
-        it('parses the correct values', function() {
+        it('parses the correct values for 300 g gegarte rote Beete', function() {
             expect('300 g gegarte rote Bete').toBeParsedAs({
                 amount: '300',
                 unit: 'g',
@@ -66,17 +66,17 @@ describe("Ingreedy", function() {
     });
 
     describe('simple ingredient additions', function() {
-        it('parses the correct values', function() {
+        it('parses the correct values for 2 Stangen Staudensellerie', function() {
             expect('2 Stangen Staudensellerie').toBeParsedAs({
                 amount: '2',
-                addition: 'Stangen',
+                unit: 'Stangen',
                 ingredient: 'Staudensellerie'
             });
         });
     });
 
     describe('ingredient additions with a container', function() {
-        it('parses the correct values', function() {
+        it('parses the correct values for 1 gestrichene TL Sumach (oder Zitronenschale)', function() {
             expect('1 gestrichener TL Sumach (oder Zitronenschale').toBeParsedAs({
                 amount: '1',
                 ingredient: 'Sumach',
