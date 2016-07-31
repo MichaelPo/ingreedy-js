@@ -51,22 +51,20 @@ describe("Unit parsing", function() {
 
     describe('when nothing follows the unit', function() {
         it('parses the unit', function() {
-            expect(parser).toParseUnit('1 lb');
-            expect(parser).toParseUnit('1 cup');
+            expect(parser).toParseUnit('1 Pfeffer');
+            expect(parser).toParseUnit('1 Salz');
         });
     })
 
     describe('german units', function() {
         it('parses tasse', function() {
             expect(parser).toParseUnit('1 Tasse Mehl');
-            expect(parser).toParseUnit('1 T. Mehl');
             expect(parser).toParseUnit('1 Tas. Mehl');
             expect(parser).toParseUnit('2 Tassen Mehl');
         });
         it('parses pfund', function() {
             expect(parser).toParseUnit('1 Pfund Mehl');
             expect(parser).toParseUnit('2 Pfd. Mehl');
-            expect(parser).toParseUnit('1 Pf Mehl');
         });
 
         it('parses loeffel', function() {

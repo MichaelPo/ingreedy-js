@@ -75,15 +75,17 @@ german_unit
 Tasse
   = 'tasse'i 'n'?
   / 'tas.'i
-  / 't'i '.'?
+  
 
 loeffel
   = 'löffel'i
-  / 'el'i
-  / 'lfl'i '.'?
   / 'teeloeffel'i
   / 'teelöffel'i
-  / 'tl'i '.'?
+  / 'el'i
+  / 'lfl.'i
+  / 'lfl'i
+  / 'tl.'i
+  / 'tl'i
 
 metric_unit
   = gramm
@@ -94,46 +96,51 @@ metric_unit
 gramm
   = 'gramm'i
   / 'gram'i
-  / 'gr'i '.'?
-  / 'g'i '.'?
+  / 'gr.'i
+  / 'gr'i
+  / 'g.'i
+  / 'g'i
 
 kilogramm
   = 'kilogramm'i
   / 'kilogram'i
-  / 'kg'i '.'?
+  / 'kg.'i
+  / 'kg'i
 
 liter
   = 'liter'i
-  / 'l'i '.'?
-  / 'ltr'i '.'?
+  / 'ltr.'i
+  / 'ltr'i
+  / 'l.'i
+  / 'l'i
 
 Pfund
   = 'pfund'i
-  / 'pfd'i '.'?
-  / 'pf'i '.'?
+  / 'pfd.'i
+  / 'pfd'i
 
 imprecise_unit
-  = gestrichen
-  / handvoll
-  / prise
+  = gestrichener
+  / handvolle
+  / prisen
   / stangen
   / dose
   / bund
   / koerniger
 
-gestrichen
-  = 'gestrichen'i
+gestrichener
+  = 'gestrichener'i
   / 'gestrichene'i
-  / 'gestrichener'i
+  / 'gestrichen'i
 
-handvoll
-  = 'handvoll'i
-  / 'handvolle'i
+handvolle
+  = 'handvolle'i
+  / 'handvoll'i
   / 'handvol'i
 
-prise
-  = 'prise'i
-  / 'prisen'i
+prisen
+  = 'prisen'i
+  / 'prise'i
 
 stangen
  = 'stangen'i
@@ -148,6 +155,5 @@ stangen
  
  koerniger
  = 'koerniger'i
- / 'körnige'i
  / 'körniger'i 
  / 'körnige'i 

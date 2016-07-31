@@ -37,10 +37,10 @@ describe("Ingreedy", function() {
     });
 
     describe('simple ingredient additions', function() {
-        it('parses the correct values for 1 EL Olivenöl', function() {
-            expect('1 EL Olivenöl').toBeParsedAs({
+        it('parses the correct values for 1 TL Olivenöl', function() {
+            expect('1 TL Olivenöl').toBeParsedAs({
                 amount: '1',
-                unit: 'EL',
+                unit: 'TL',
                 ingredient: 'Olivenöl'
             });
         });
