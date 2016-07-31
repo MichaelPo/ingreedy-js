@@ -45,6 +45,16 @@ describe("Ingreedy", function() {
             });
         });
     });
+
+    describe('simple ingredient additions', function() {
+        it('parses the correct values for 3 Liter Milch', function() {
+            expect('3 Liter Milch').toBeParsedAs({
+                amount: '3',
+                unit: 'Liter',
+                ingredient: 'Milch'
+            });
+        });
+    });
     describe('simple ingredient additions', function() {
         it('parses the correct values for 80 g Heidelbeere', function() {
             expect('80 g Heidelbeere').toBeParsedAs({

@@ -71,25 +71,17 @@ unit
 german_unit
   = Tasse
   / loeffel
-  / teeloeffel
-
+  
 Tasse
-  = 'Tasse'i
-  / 'Tassen'i
-  / 'Tas.'i
-  / 'T'i '.'?
-
-
-
+  = 'tasse'i 'n'?
+  / 'tas.'i
+  / 't'i '.'?
 
 loeffel
   = 'löffel'i
-  / 'EL'i
+  / 'el'i
   / 'lfl'i '.'?
-
-
-teeloeffel
-  = 'teeloeffel'i
+  / 'teeloeffel'i
   / 'teelöffel'i
   / 'tl'i '.'?
 

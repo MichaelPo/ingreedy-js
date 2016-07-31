@@ -57,11 +57,11 @@ describe("Unit parsing", function() {
     })
 
     describe('german units', function() {
-        it('parses tassen', function() {
+        it('parses tasse', function() {
             expect(parser).toParseUnit('1 Tasse Mehl');
-            expect(parser).toParseUnit('2 Tassen Mehl');
             expect(parser).toParseUnit('1 T. Mehl');
             expect(parser).toParseUnit('1 Tas. Mehl');
+            expect(parser).toParseUnit('2 Tassen Mehl');
         });
         it('parses pfund', function() {
             expect(parser).toParseUnit('1 Pfund Mehl');
@@ -73,13 +73,10 @@ describe("Unit parsing", function() {
             expect(parser).toParseUnit('1 Löffel Zucker');
             expect(parser).toParseUnit('2 EL Zucker');
             expect(parser).toParseUnit('1 LFL. Zucker');
-        });
-
-        it('parses teeloeffel', function() {
             expect(parser).toParseUnit('3 teeloeffel Zucker');
-            expect(parser).toParseUnit('3 TL. Zucker');
+            expect(parser).toParseUnit('3 Tl. Zucker');
             expect(parser).toParseUnit('1 Teelöffel Zucker');
-            expect(parser).toParseUnit('2 TL Zucker');
+            expect(parser).toParseUnit('2 Tl Zucker');
         });
     });
 
