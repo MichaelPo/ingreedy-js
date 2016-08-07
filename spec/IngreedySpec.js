@@ -38,10 +38,19 @@ describe("Ingreedy", function() {
 
     describe('simple ingredient additions', function() {
         it('parses the correct values for 1 TL Olivenöl', function() {
-            expect('1 TL Olivenöl').toBeParsedAs({
+            expect('1 TL Olivenoel').toBeParsedAs({
                 amount: '1',
                 unit: 'TL',
-                ingredient: 'Olivenöl'
+                ingredient: 'Olivenoel'
+            });
+        });
+    });
+
+    describe('simple ingredient additions', function() {
+        it('parses the correct values for 6 Lammkoteletts (à ca. 80 g) ', function() {
+            expect('6 Lammkoteletts (à ca. 80 g)').toBeParsedAs({
+                amount: '6',
+                ingredient: 'Lammkoteletts (à ca. 80 g)'
             });
         });
     });
@@ -55,6 +64,15 @@ describe("Ingreedy", function() {
             });
         });
     });
+
+    describe('simple ingredient additions', function() {
+        it('parses the correct values for Pfeffer', function() {
+            expect('Pfeffer').toBeParsedAs({
+                ingredient: 'Pfeffer'
+            });
+        });
+    });
+
     describe('simple ingredient additions', function() {
         it('parses the correct values for 80 g Heidelbeere', function() {
             expect('80 g Heidelbeere').toBeParsedAs({

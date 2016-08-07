@@ -1,4 +1,15 @@
 'use strict';
+function umlautReplace(a) {	
+	a = a.replace("ä", "ae");
+	a = a.replace("ö", "oe");
+	a = a.replace("ü", "ue");
+	a = a.replace("Ä", "ae");
+	a = a.replace("Ö", "oe");
+	a = a.replace("Ü", "ue");
+
+	a = a.replace("ß", "ss");
+    return a;  
+}
 
 var unitMatchers = {
     toParseUnit: function(util, customEqualityTesters) {
@@ -74,7 +85,7 @@ describe("Unit parsing", function() {
             expect(parser).toParseUnit('3 teeloeffel Zucker');
             expect(parser).toParseUnit('3 Tl. Zucker');
             expect(parser).toParseUnit('1 Teelöffel Zucker');
-            expect(parser).toParseUnit('2 Tl Zucker');
+            expect(parser).toParseUnit('2 TL Olivenöl');
         });
     });
 
