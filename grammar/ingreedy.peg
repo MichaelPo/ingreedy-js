@@ -2,12 +2,20 @@ start
   = ingredient_addition
 
 ingredient_addition
-  = amount:amount? (ws+)? container:container? unit:unit? (ws+)? ingredient:ingredient? [\n]?  {
+  = a:amount? (ws+)? c:container? u:unit? (ws+)? i:ingredient? [\n]?  {
+    if ((i==='Salz') && (u===null || u===undefined)) {
+         u='Prise';  
+         a='1'
+       }
+    if ((i==='Pfeffer') && (u===null || u===undefined)) {
+         u='Prise';  
+         a='1'
+       }
     var result = {
-      amount: amount,
-      container: container,
-      unit: unit,
-      ingredient: ingredient
+      amount: a,
+      container: c,
+      unit: u,
+      ingredient: i
     };
 
     for(var i in result) {
@@ -40,7 +48,7 @@ space
   = " "
 
 ingredient
-  = phrase
+  = phrase 
 
 phrase
   = $(word (space word)*)
@@ -92,6 +100,7 @@ metric_unit
   = gramm
   / kilogramm
   / liter
+  / milliliter
   / Pfund
 
 gramm
@@ -115,6 +124,11 @@ liter
   / 'l.'i
   / 'l'i
 
+milliliter
+  = 'milliliter'i
+  / 'ml.'i
+  / 'ml'i
+
 Pfund
   = 'pfund'i
   / 'pfd.'i
@@ -128,6 +142,8 @@ imprecise_unit
   / dose
   / bund
   / koerniger
+  / kleine
+  / etwas
 
 gestrichener
   = 'gestrichener'i
@@ -158,3 +174,11 @@ stangen
  = 'koerniger'i
  / 'körniger'i 
  / 'körnige'i 
+ 
+ kleine
+ = 'kleine'i
+ / 'kleiner'i 
+ 
+ etwas
+ = 'etwas'i
+ / 'etwa'i 
