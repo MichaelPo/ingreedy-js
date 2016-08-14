@@ -68,7 +68,30 @@ describe("Ingreedy", function() {
     describe('simple ingredient additions', function() {
         it('parses the correct values for Pfeffer', function() {
             expect('Pfeffer').toBeParsedAs({
-                ingredient: 'Pfeffer'
+                ingredient: 'Pfeffer',
+                amount: '1',
+                unit: 'Prise'
+            });
+        });
+    });
+
+
+    describe('simple ingredient additions', function() {
+        it('parses the correct values for Salz', function() {
+            expect('Salz').toBeParsedAs({
+                ingredient: 'Salz',
+                amount: '1',
+                unit: 'Prise'
+            });
+        });
+    });
+
+    describe('simple ingredient additions', function() {
+        it('parses the correct values for 2 ½ TL Honig', function() {
+            expect('2 ½ TL Honig').toBeParsedAs({
+                ingredient: 'Honig',
+                amount: '2 ½',
+                unit: 'TL'
             });
         });
     });

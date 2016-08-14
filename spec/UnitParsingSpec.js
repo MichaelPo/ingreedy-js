@@ -1,14 +1,15 @@
 'use strict';
-function umlautReplace(a) {	
-	a = a.replace("ä", "ae");
-	a = a.replace("ö", "oe");
-	a = a.replace("ü", "ue");
-	a = a.replace("Ä", "ae");
-	a = a.replace("Ö", "oe");
-	a = a.replace("Ü", "ue");
 
-	a = a.replace("ß", "ss");
-    return a;  
+function umlautReplace(a) {
+    a = a.replace("ä", "ae");
+    a = a.replace("ö", "oe");
+    a = a.replace("ü", "ue");
+    a = a.replace("Ä", "ae");
+    a = a.replace("Ö", "oe");
+    a = a.replace("Ü", "ue");
+
+    a = a.replace("ß", "ss");
+    return a;
 }
 
 var unitMatchers = {
@@ -62,8 +63,8 @@ describe("Unit parsing", function() {
 
     describe('when nothing follows the unit', function() {
         it('parses the unit', function() {
-            expect(parser).toParseUnit('1 Pfeffer');
-            expect(parser).toParseUnit('1 Salz');
+            expect(parser).toParseUnit('1 Prise Pfeffer');
+            expect(parser).toParseUnit('1 Prise Salz');
         });
     })
 
