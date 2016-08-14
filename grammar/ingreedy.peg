@@ -60,9 +60,13 @@ fraction
 integer
   = digits:[0-9]+ { return digits.join(''); }
 
+// ÄÖÜüöä()a(mit Gravis)A(mit Gravis).
+letterold
+  = [a-zA-Z\u00E4\u00F6\u00FC\u00C4\u00D6\u00DC\u00df\u0028\u0029\u00E0\u00C0\u002E]
 
 letter
-  = [a-zA-Z\u00E4\u00F6\u00FC\u00C4\u00D6\u00DC\u00df()]
+  = [a-zA-Z\u00E4\u00F6\u00FC\u00C4\u00D6\u00DC\u00df]
+
 
 unit
   = $(german_unit !letter)
