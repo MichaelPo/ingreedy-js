@@ -1,8 +1,6 @@
-start
-  = ingredient_addition
-
-ingredient_addition
-  = a:amount? (ws+)? c:container? u:unit? (ws+)? i:ingredient? [\n]?  {
+{
+  var AdditionCheck = {
+    ingredientCheck: function(a,c,u,i) {
     if ((i==='Salz') && (u===null || u===undefined)) {
          u='Prise';  
          a='1'
@@ -11,12 +9,26 @@ ingredient_addition
          u='Prise';  
          a='1'
        }
-    var result = {
+      return {
       amount: a,
       container: c,
       unit: u,
       ingredient: i
     };
+    }
+  };
+}
+
+
+
+
+
+start
+  = ingredient_addition
+  
+ingredient_addition
+  = a:amount? (ws+)? c:container? u:unit? (ws+)? i:ingredient? [\n]?  {
+    var result = AdditionCheck.ingredientCheck(a,c,u,i);
 
     for(var i in result) {
       if(result[i] === null || result[i] === undefined) {
@@ -39,6 +51,12 @@ container
   = "("? ingredient:ingredient? amount:amount (ws+)? unit:unit")"? {
     return {ingredient:ingredient, amount: amount, unit: unit };
   }
+// following details in brackets after ingredients will be ignored
+containerBracket
+  = "("*")"? {
+    return "" };
+
+
 
 ws
   = " "
