@@ -79,11 +79,15 @@ describe("Ingreedy", function() {
 
     describe('simple ingredient additions', function() {
         it('parses the correct values for Salz', function() {
-            expect('Salz').toBeParsedAs({
+            expect('Salz\nPfeffer').toBeParsedAs([{
                 ingredient: 'Salz',
                 amount: '1',
                 unit: 'Prise'
-            });
+            }, {
+                ingredient: 'Pfeffer',
+                amount: '1',
+                unit: 'Prise'
+            }]);
         });
     });
 

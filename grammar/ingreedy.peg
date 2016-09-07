@@ -25,9 +25,12 @@
 
 start
   = ingredient_addition
-  
+
 ingredient_addition
-  = a:amount? (ws+)? c:container? u:unit? (ws+)? i:ingredient? [\n]?  {
+= ingredient_addition_item *  
+
+ingredient_addition_item
+  = a:amount? (ws+)? c:container? u:unit? (ws+)? i:ingredient [\n]*  {
     var result = AdditionCheck.ingredientCheck(a,c,u,i);
 
     for(var i in result) {
@@ -35,8 +38,11 @@ ingredient_addition
         delete result[i];
       }
     }
-
-    return result;
+     return result  ;
+  }
+  
+  / (.)  {
+    
   }
 
 
