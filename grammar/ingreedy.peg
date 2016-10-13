@@ -1,6 +1,6 @@
 {
   var AdditionCheck = {
-    ingredientCheck: function(a,c,u,i) {
+    ingredientCheck: function(a,u,i) {
     if ((i==='Salz') && (u===null || u===undefined)) {
          u='Prise';  
          a='1'
@@ -11,7 +11,6 @@
        }
       return {
       amount: a,
-      container: c,
       unit: u,
       ingredient: i
     };
@@ -30,8 +29,8 @@ ingredient_addition
 = ingredient_addition_item *  
 
 ingredient_addition_item
-  = a:amount? (ws+)? c:container? u:unit? (ws+)? i:ingredient [\n]*  {
-    var result = AdditionCheck.ingredientCheck(a,c,u,i);
+  = a:amount? (ws+)? u:unit? (ws+)? i:ingredient [\n]*  {
+    var result = AdditionCheck.ingredientCheck(a,u,i);
 
     for(var i in result) {
       if(result[i] === null || result[i] === undefined) {
@@ -42,7 +41,7 @@ ingredient_addition_item
   }
   
   / (.)  {
-    
+    return {};
   }
 
 
@@ -81,7 +80,7 @@ word
   = letters:letter+ { return letters.join(''); }
 
 float
-  = $(integer? [.] integer)
+  = $(integer? [,] integer)
 
 mixed_number
   = $(integer space fraction)
@@ -96,8 +95,9 @@ integer
 letterold
   = [a-zA-Z\u00E4\u00F6\u00FC\u00C4\u00D6\u00DC\u00df\u0028\u0029\u00E0\u00C0\u002E]
 
+//ÄÖÜüöä-
 letter
-  = [a-zA-Z\u00E4\u00F6\u00FC\u00C4\u00D6\u00DC\u00df]
+  = [a-zA-Z\u00E4\u00F6\u00FC\u00C4\u00D6\u00DC\u00df\u002d]
 
 
 unit
@@ -172,6 +172,9 @@ imprecise_unit
   / koerniger
   / kleine
   / etwas
+  / packung
+  / stiele
+  / breite
 
 gestrichener
   = 'gestrichener'i
@@ -210,3 +213,15 @@ stangen
  etwas
  = 'etwas'i
  / 'etwa'i 
+
+  packung
+ = 'packung'i
+ / 'packungen'i 
+ 
+  stiele
+ = 'stiele'i
+ / 'stiel'i 
+ 
+  breite
+ = 'breite'i
+ / 'breiten'i 

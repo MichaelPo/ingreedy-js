@@ -38,13 +38,33 @@ describe("Ingreedy", function() {
 
     describe('simple ingredient additions', function() {
         it('parses the correct values for 1 TL Olivenöl', function() {
-            expect('1 TL Olivenoel').toBeParsedAs({
+            expect('1 TL Olivenoel').toBeParsedAs([{
                 amount: '1',
                 unit: 'TL',
                 ingredient: 'Olivenoel'
-            });
+            }]);
         });
     });
+
+    describe('simple ingredient additions', function() {
+        it('parses the correct values for 6 Lammkoteletts (a ca. 80 g)', function() {
+            expect('6 Lammkoteletts (a ca. 80 g)').toBeParsedAs([{
+                amount: '6',
+                ingredient: 'Lammkoteletts'
+            }]);
+        });
+    });
+
+    describe('simple ingredient additions', function() {
+        it('parses the correct values for 300 g gegarte Rote Bete', function() {
+            expect('300 g gegarte Rote Bete').toBeParsedAs([{
+                amount: '300',
+                unit: 'g',
+                ingredient: 'gegarte Rote Bete'
+            }]);
+        });
+    });
+
 
     describe('simple ingredient additions', function() {
         it('parses the correct values for 6 Lammkoteletts (à ca. 80 g) ', function() {
