@@ -58,7 +58,7 @@ container
   }
 // following details in brackets after ingredients will be ignored
 containerBracket
-  = "("*")"? {
+= "("*")"? {
     return "" };
 
 
@@ -102,6 +102,7 @@ letter
 
 unit
   = $(german_unit !letter)
+  / $(english_unit !letter)
   / $(metric_unit !letter)
   / $(imprecise_unit !letter)
 
@@ -123,6 +124,83 @@ loeffel
   / 'lfl'i
   / 'tl.'i
   / 'tl'i
+
+english_unit
+  = cup
+  / fluid_ounce
+  / gallon
+  / ounce
+  / pint
+  / pound
+  / quart
+  / tablespoon
+  / teaspoon
+
+cup
+  = 'cups'i
+  / 'cup'i
+  / 'c.'i
+  / 'c'i
+
+fluid_ounce
+  = fluid ws ounce
+
+fluid
+  = 'fluid'i
+  / 'fl'i '.'?
+
+gallon
+  = 'gallons'i
+  / 'gallon'i
+  / 'gal.'i
+  / 'gal'i
+
+ounce
+  = 'ounces'i
+  / 'ounce'i
+  / 'oz.'i
+  / 'oz'i
+
+pint
+  = 'pints'i
+  / 'pint'i
+  / 'pt.'i
+  / 'pt'i
+
+pound
+  = 'pounds'i
+  / 'pound'i
+  / 'lbs.'i
+  / 'lbs'i
+  / 'lb.'i
+  / 'lb'i
+
+quart
+  = 'quarts'i
+  / 'quart'i
+  / 'qts.'i
+  / 'qts'i
+  / 'qt.'i
+  / 'qt'i
+
+tablespoon
+  = 'tablespoons'i
+  / 'tablespoon'i
+  / 'tbsp.'i
+  / 'tbsp'i
+  / 'tbs.'i
+  / 'tbs'i
+  / 'T.'
+  / 'T'
+
+teaspoon
+  = 'teaspoons'i
+  / 'teaspoon'i
+  / 'tsp.'i
+  / 'tsp'i
+  / 't.'
+  / 't'
+
 
 metric_unit
   = gramm
@@ -175,6 +253,10 @@ imprecise_unit
   / packung
   / stiele
   / breite
+  / ggf
+  / mittelgroße
+  / Blaetter
+  / Scheiben
 
 gestrichener
   = 'gestrichener'i
@@ -225,3 +307,23 @@ stangen
   breite
  = 'breite'i
  / 'breiten'i 
+
+  ggf
+ = 'ggf'i
+ / 'ggfs'i 
+ / 'ggfs.'i
+ / 'ggf.'i
+
+   mittelgroße
+  = 'mittelgroße'i
+  / 'mittelgroße(s)'i
+  / 'mittelgrosse'i
+  / 'mittelgrosse(s)'i
+ 
+  Scheiben
+ = 'scheiben'i
+ / 'scheibe'i 
+
+  Blaetter
+ = 'blaetter'i
+ / 'blätter'i

@@ -14,6 +14,11 @@ module.exports = function(grunt) {
         src: 'grammar/ingreedy.peg',
         dest: 'src/parser.js',
         options: { exportVar: 'Ingreedy' }
+      },
+      ingreedyen: {
+        src: 'grammar/ingreedy_en.peg',
+        dest: 'src/parser_en.js',
+        options: { exportVar: 'Ingreedy' }
       }
     },
     watch: {
