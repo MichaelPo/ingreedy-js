@@ -2,11 +2,20 @@
   var AdditionCheck = {
     ingredientCheck: function(a,u,i) {
     if ((i==='Salz') && (u===null || u===undefined)) {
-         u='Prise';  
+         u='Prise';
          a='1'
        }
+    if ((i==='Öl') && (u===null || u===undefined)) {
+         u='Etwas';
+         a='1'
+       }
+    if ((i==='Puderzucker') && (u===null || u===undefined)) {
+         u='Etwas';
+         a='1'
+       }
+
     if ((i==='Pfeffer') && (u===null || u===undefined)) {
-         u='Prise';  
+         u='Prise';
          a='1'
        }
       return {
@@ -84,9 +93,14 @@ float
 
 mixed_number
   = $(integer space fraction)
+  / $(fraction_unicode)
+  / $(space fraction_unicode)
+  / $(integer space fraction_unicode)
+  / $(integer fraction_unicode)
 
 fraction
   = $(integer [/] integer)
+  / [\u00BC\u00BD\u00BE]
 
 integer
   = digits:[0-9]+ { return digits.join(''); }
@@ -99,6 +113,9 @@ letterold
 letter
   = [a-zA-Z\u00E4\u00F6\u00FC\u00C4\u00D6\u00DC\u00df\u002d]
 
+//1/2 1/4 u. 3/4
+fraction_unicode
+  = [\u00BC\u00BD\u00BE]
 
 unit
   = $(german_unit !letter)
@@ -119,6 +136,7 @@ loeffel
   = 'löffel'i
   / 'teeloeffel'i
   / 'teelöffel'i
+  / 'teel.'i
   / 'el'i
   / 'lfl.'i
   / 'lfl'i
